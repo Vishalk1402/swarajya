@@ -7,7 +7,7 @@ export default function SceneSunrise({ active, dimmed }) {
   const textRef = useRef(null);
   const playedRef = useRef(false);
 
-
+  // Intro animation (runs once)
   useEffect(() => {
     if (!active || playedRef.current) return;
 
@@ -20,7 +20,7 @@ export default function SceneSunrise({ active, dimmed }) {
       .to(textRef.current, { opacity: 1, duration: 0.8 }, '-=0.6');
   }, [active]);
 
-
+  // Visibility + reverse scrolling
   useEffect(() => {
     if (active) {
       gsap.to(sceneRef.current, {
@@ -48,13 +48,16 @@ export default function SceneSunrise({ active, dimmed }) {
   }, [active, dimmed]);
 
   return (
-    <section className="scene sunrise" ref={sceneRef}>
-      <div className="sky" />
-      <div className="sun" />
-      <div className="fort" />
+     <section className="scene sunrise" ref={sceneRef}>
+    <div className="sky" />
+    <div className="sun" />
+    <div className="fort" />
+
+    {active && !dimmed && (
       <p ref={textRef} className="sunrise-text">
         From these hills…
       </p>
-    </section>
+    )}
+  </section>
   );
 }
