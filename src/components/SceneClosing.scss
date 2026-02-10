@@ -1,0 +1,22 @@
+.scene.closing {
+  position: fixed;
+  inset: 0;
+  z-index: 4;
+  background: radial-gradient(circle at center,
+      rgba(6, 8, 12, 0.95),
+      rgba(6, 8, 12, 1));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.closing-text {
+  letter-spacing: 0.15em;
+  font-size: 1.5rem;
+  opacity: 0;
+  text-align: center;
+  color: #ba7800;
+  font-weight: 500;
+}

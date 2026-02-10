@@ -1,0 +1,51 @@
+.scene.oath {
+  position: fixed;
+  inset: 0;
+  z-index: 3;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sword-wrapper {
+  position: relative;
+  height: 360px;
+}
+
+.sword {
+  height: 100%;
+  opacity: 1; /* always present */
+  filter: brightness(0.9);
+}
+
+.glint {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 5px;
+  height: 120px;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255, 255, 255, 0.9),
+    transparent
+  );
+  opacity: 0;
+  mix-blend-mode: screen;
+}
+
+.oath-text {
+  margin-top: 2rem;
+  letter-spacing: 0.2em;
+  font-size: 0.9rem;
+  text-align: center;
+  opacity: 0;
+  color: #ba7800;
+  font-weight: 500;
+}
+

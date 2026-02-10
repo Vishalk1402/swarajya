@@ -1,0 +1,39 @@
+.scene.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 0; /* 🔑 base layer */
+  background: radial-gradient(
+    circle at bottom,
+    var(--bg-dark),
+    var(--bg-deep)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0; /* 🔑 controlled by GSAP */
+  pointer-events: none;
+}
+
+.intro-text {
+  font-size: 1.2rem;
+  letter-spacing: 0.2em;
+  opacity: 0.6;
+  z-index: 2;
+  color: #ba7800;
+  font-weight: 500;
+  text-align: center;
+}
+
+.fog {
+  position: absolute;
+  inset: 0;
+  background: url('/noise.png');
+  opacity: 0.03;
+  animation: fogMove 20s linear infinite;
+  z-index: 1;
+}
+
+@keyframes fogMove {
+  from { transform: translateY(0); }
+  to { transform: translateY(-50px); }
+}
